@@ -9,16 +9,10 @@ import '../App.css';
 const ProductCard = () => {
     
     const [item, setItem] = useState([
-        {id:1, name:"shirts1",},
-        {id:2, name:"shirts2",},
-        {id:3, name:"shirts3",},
+        {id:1, name:"shirts1", img:"옷1.png"},
+        {id:2, name:"shirts2", img:"옷2.png"},
+        {id:3, name:"shirts3", img:"옷3.png"},
     ])
-
-    const [imgList, setImgList] = useState([
-        "옷1.png",
-        "옷2.png",
-        "옷3.png",
-    ]);
     
     return ( 
         <>
@@ -26,13 +20,13 @@ const ProductCard = () => {
             require사용해서 이미지 주소 지정 */}
         <p className='text'>더보기</p>
         <Container>
-            <Row className='product-box'>
+            <Row>
                 {
-                    imgList.map((img, idx) => (
-                        <Col key={idx}>
-                            <img className="img" src={require('../img/'+ img)} />
+                    item.map((item, idx) => (
+                        <Col key={idx} className='product-box'>
+                            <img className="img" src={require('../img/'+item.img)} />
                             <br />
-                            <b key={item[idx].id}>{item[idx].name}</b>
+                            <b key={item.id}>{item.name}</b>
                         </Col>
                     ))
                 }

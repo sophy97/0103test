@@ -7,7 +7,7 @@
 }
 .product-box {
   width: 100%;
-  border: 2px solid burlywood;
+  border: 2px solid rgb(236, 198, 148);
   border-radius: 10px;
   background-color: antiquewhite;
 }
